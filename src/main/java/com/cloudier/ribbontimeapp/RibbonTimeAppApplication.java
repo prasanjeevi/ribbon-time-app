@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.cloudier.config.RibbonConfig;
+
 
 @SpringBootApplication
-@RibbonClient(name = "time-service")
+@RibbonClient(name = "time-service", configuration = RibbonConfig.class)
 @RestController
 public class RibbonTimeAppApplication {
 
